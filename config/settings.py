@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     # Local
     "accounts.apps.AccountsConfig",
     "posts.apps.PostsConfig",
+    # Third party
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 AUTH_USER_MODEL = "accounts.CostumUser"
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CALSSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
+}
