@@ -1,5 +1,5 @@
 from django.db import models
-from config.settings import AUTH_USER_MODEL
+from django.conf import settings
 
 
 class Post(models.Model):
