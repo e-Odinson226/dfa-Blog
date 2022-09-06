@@ -134,7 +134,7 @@ AUTH_USER_MODEL = "accounts.CostumUser"
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CALSSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",
     ],
 }
 CORS_ORIGIN_WHITELIST = (
