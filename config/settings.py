@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Third party
     "rest_framework",
     "corsheaders",
+    "rest_framework.authtoken",
 ]
 
 MIDDLEWARE = [
@@ -135,6 +136,10 @@ AUTH_USER_MODEL = "accounts.CostumUser"
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CALSSES": [
         "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT.AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
     ],
 }
 CORS_ORIGIN_WHITELIST = (
