@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "dj_rest_auth",
     "dj_rest_auth.registration",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -148,13 +149,20 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CALSSES": [
         "rest_framework.permissions.IsAuthenticated",
     ],
-    "DEFAULT.AUTHENTICATION_CLASSES": [
+    "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:3000",
     "http://localhost:8000",
 )
 CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Blog API",
+    "DESCRIPTION": "sample project to learn API",
+    "VERSION": "1.0.0",
+}
